@@ -1,0 +1,86 @@
+/* algemeen  */
+
+h3 {
+  margin-top: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* hoofdpagina */
+
+.text__wrapper {
+  padding-top: 2em;
+  font-size: 1.3em;
+  padding: 1em;
+}
+
+.text__wrapper, .image__home {
+  background-color: white;
+}
+
+.image__home {
+  width: 100%
+}
+
+.image__me {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  max-width: 20%;
+  height: auto;
+  border-radius: 24em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+
+
+/*  nav__wrapperbar */
+
+.nav__list {
+  list-style-type: none;
+  margin: 0;
+  padding-right: 4em;
+  overflow: hidden;
+  background-color: white;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-style:  ridge;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.nav__list .nav__item {
+  float: right;
+}
+
+
+
+.nav__list .nav__item .nav__text {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 24px 16px;
+  text-decoration: none;
+}
+
+.nav__wrapper {
+  position: fixed;
+  top: 0px;
+  width: 100%
+
+}
+
+
+.nav__list .nav__item .nav__text:hover:not(.active) {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
