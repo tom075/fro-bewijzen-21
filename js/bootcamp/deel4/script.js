@@ -1,9 +1,9 @@
 "use strict";
 
 // Declare variables
-var student = "Brendan Eich";
+var student = "Tom Folkers";
 var year = 2018;
-var group = "MD2x";
+var group = "MD2A";
 var title = "JavaScript Bootcamp " + year;
 var currentYear = (new Date()).getFullYear();
 var period = getPeriod(2018, currentYear)
@@ -220,8 +220,12 @@ var part4 = {
         description += addLine("Student Yosef East zit in groep MD2 en zijn eerste les is FRO");
 
         // Zorg ervoor dat de opdracht goed wordt uitgevoerd en dat de content wordt bijgewerkt.
-        var result = "";
+        var student = {name:"Tom Folkers", group:"MD2A", lessons:["FRO " , "BAP " , "PROJ"]};
 
+
+
+        var result = "Student " + student.name + " zit in groep " + student.group + " en zijn eerste les is " + student.lessons[0];
+         result += "<br><br>" + JSON.stringify(student);
         updateContent("Opdracht 12 - Object aanmaken", description, result);
     },
 
@@ -254,12 +258,39 @@ var part4 = {
             arrayPrint += addLine(studentsArray[i]);
         }
 
+        var x =[
+                "name,group",
+            "Yosef East,MD2A",
+            "Madison Dillard,MD2A",
+            "Thiago Sherman,MD2A",
+            "Iga Mcgee,MD2A",
+            "Amar Anthony,MD2A",
+            "Ilyas Suarez,MD2B",
+            "Jamel Vu,MD2B",
+            "Maja Garcia,MD2B",
+            "Elyas Galloway,MD2B",
+            "Duncan Bull,MD2B"
+    ];
+        var myJsonString = JSON.stringify(x);
+
+
+        var myJsonString1 = myJsonString.replace('"name,group"','');
+        var myJsonString2 = myJsonString1.replace(/,"/g,'{"name":"');
+        var myJsonString3 = myJsonString2.replace(/,M/g,'","group":"M');
+        var myJsonString4 = myJsonString3.replace(/"{/g,'"},{');
+        var myJsonString5 = myJsonString4.replace(']','}]');
+
+
+
+
+
         description += arrayPrint;
         description += "<h4>JSON-formaat</h4>";
         description += '[{"name":"Yosef East","group":"MD2A"}, {"name":"Madison Dillard","group":"MD2A"}, {"name":"Thiago Sherman","group":"MD2A"}, {"name":"Iga Mcgee","group":"MD2A"}, {"name":"Amar Anthony","group":"MD2A"}, {"name":"Ilyas Suarez","group":"MD2B"}, {"name":"Jamel Vu","group":"MD2B"}, {"name":"Maja Garcia","group":"MD2B"}, {"name":"Elyas Galloway","group":"MD2B"}, {"name":"Duncan Bull","group":"MD2B"}]';
 
+
         // Zorg ervoor dat de opdracht goed wordt uitgevoerd en dat de content wordt bijgewerkt.
-        var result = "";
+        var result = myJsonString5;
         
         updateContent("Opdracht 13 - Converteer naar JSON", description, result);
     },
