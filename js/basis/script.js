@@ -1,8 +1,8 @@
 "use strict";
 
 // Declare variables
-const studentName = "Brendan Eich";
-const studentGroup = "MD2x";
+const studentName = "Tom Folkers";
+const studentGroup = "MD2A";
 const year = main.year;
 
 // Init
@@ -10,9 +10,28 @@ init();
 
 // Functions
 
+function group() {
+
+}
+
+
 function init() {
     // Set content based on variables
     document.getElementById("studentName").innerText = studentName;
+
+    var group = document.getElementsByClassName("studentGroup");
+    for (var i = 0; i < group.length; i++) {
+        group[i].innerHTML = studentGroup;
+    }
+    var pageYear = document.getElementsByClassName("pageYear");
+    for (var i = 0; i < group.length; i++) {
+        pageYear[i].innerHTML = year;
+    }
+
+
+
+
+
     // Add navigation link to the navigation panel on the left of the page
     main.addContenItem("Inleiding", intro);
     // Activate the first navigation link
@@ -44,7 +63,7 @@ function intro() {
     p.appendChild(img);
     p.appendChild(document.createElement("br"));
     p.appendChild(label);
-    
+
     // Add the paragraph to the DOM
-    element.appendChild(p); 
+    element.appendChild(p);
 }
