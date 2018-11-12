@@ -227,7 +227,7 @@ String.prototype.rightChars = function(n){
       leftStop: i,
       rightStop: currentText.length - j,
       primaryColor: $e.css('color'),
-      backgroundColor: $e.css('background-color'),
+      backgroundColor: $e.css('red'),
       text: newString
     });
 
