@@ -14,7 +14,14 @@ $(document).ready( function(){
         $(this).next().fadeTo(1000,100);
     });
 
+    $('.text').click(function () {
+        $(this).animate({
+            fontSize: "3em",
+        },1000).animate({
+            fontSize: "100%",
 
+        })
+    });
     //de footer
     $('footer').click(function () {
         $(this).animate({
@@ -25,6 +32,14 @@ $(document).ready( function(){
             opacity: '+=1'
 
         })
+    });
+
+
+    $('h2').click(function () {
+
+        $(this).typeTo('Een goede dj');
+        $('[data-typer-targets]').typer();
+
     });
 
 });//einde ducument ready
