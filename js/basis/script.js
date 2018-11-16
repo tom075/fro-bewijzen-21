@@ -10,9 +10,6 @@ init();
 
 // Functions
 
-function group() {
-
-}
 
 
 function init() {
@@ -38,11 +35,11 @@ function init() {
 
 
 
-
+    intro()
     // Add navigation link to the navigation panel on the left of the page
     main.addContenItem("Inleiding", intro);
+    main.addContenItem("Variabelen", variables);
     // Activate the first navigation link
-    intro();
 }
 
 function intro() {
@@ -63,7 +60,7 @@ function intro() {
 
     // Create the label
     var label = document.createElement("label");
-    label.innerHTML = "Brendan Eich";
+    label.innerHTML = "Tom Folkers";
 
     // Create the paragraph and add the image and label to it
     var p = document.createElement("p");
@@ -73,4 +70,12 @@ function intro() {
 
     // Add the paragraph to the DOM
     element.appendChild(p);
+}
+
+function variables() {
+
+    let description = "Je bent in dienst van energiemaatschappij Energy Solutions en";
+
+    main.updateContent("Inleiding", description);
+
 }
