@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f53b085-1c30-4268-b34c-14c074f68060" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../css/opdracht3/src/polygonizr.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/opdracht3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/opdracht3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/opdracht3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/opdracht3/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/opdracht3/javascript.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/opdracht3/javascript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/opdracht3/src/jquery.typer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/opdracht3/src/jquery.typer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../css/opdracht3/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/opdracht3/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="5f53b085-1c30-4268-b34c-14c074f68060" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-end-line="22" />
+            <state relative-caret-position="420">
+              <caret line="28" column="81" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -69,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="285">
+              <caret line="19" column="66" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -151,15 +144,16 @@
       <option name="presentableId" value="Default" />
       <updated>1540802429189</updated>
       <workItem from="1540802430447" duration="4100000" />
-      <workItem from="1542363314515" duration="355000" />
+      <workItem from="1542363314515" duration="635000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4455000" />
+    <option name="totallyTimeSpent" value="4735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -202,15 +196,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-end-line="22" />
+        <state relative-caret-position="420">
+          <caret line="28" column="81" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="81" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="285">
+          <caret line="19" column="66" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="66" />
         </state>
       </provider>
     </entry>

@@ -23,9 +23,16 @@ function init() {
     for (var i = 0; i < group.length; i++) {
         group[i].innerHTML = studentGroup;
     }
+
+
     var pageYear = document.getElementsByClassName("pageYear");
-    for (var i = 0; i < group.length; i++) {
+    for (var i = 0; i < pageYear.length; i++) {
         pageYear[i].innerHTML = year;
+    }
+
+    var student = document.getElementsByClassName("studentName");
+    for (var i = 0; i < student.length; i++) {
+        student[i].innerHTML = studentName;
     }
 
 
