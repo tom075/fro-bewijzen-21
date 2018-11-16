@@ -42,5 +42,10 @@ $(document).ready( function(){
 
     });
 
+    $('#background').polygonizr();
+
+
+
+
 });//einde ducument ready
 

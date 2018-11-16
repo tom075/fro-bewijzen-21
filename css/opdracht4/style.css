@@ -1,0 +1,52 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+nav{
+    position: fixed;
+    width: 9em;
+    height: 100vh;
+    display: grid;
+    align-content: center;
+}
+h2 {
+    padding: 0;
+    margin: 0;
+}
+
+section{
+    min-height: 100vh;
+    padding: 2em 2em 2em 9em;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+nav a{
+    display: block;
+    color: #fff;
+    background: black;
+    text-decoration: none;
+    margin-top:.3em;
+
+}
+
+li{
+    list-style: none;
+}
+ul{
+    padding: 0;
+}
+
+#rood  {background: red;}
+#groen {background: green;}
+#blauw {background: blue;}
+#paars  {background: purple;}
+#geel  {background: yellow;}
