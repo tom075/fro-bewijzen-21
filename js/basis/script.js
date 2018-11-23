@@ -1,203 +1,115 @@
-"use strict";
+"use  strict";
 
-// Declare variables
-const studentName = "Tom Folkers";
-const studentGroup = "MD2A";
-const year = main.year;
-const studentClass = document.getElementsByClassName("studentGroup");
-const pageYear = document.getElementsByClassName("pageYear");
-const studentNameClass = document.getElementsByClassName("studentName");
+const  studentName  =  "Tom  Folkers";
+const  studentGroup  =  "MD2A";
+const  year  =  main.year;
+const  studentClass  =  document.getElementsByClassName("studentGroup");
+const  pageYear  =  document.getElementsByClassName("pageYear");
+const  studentNameClass  =  document.getElementsByClassName("studentName");
 
-
-
-// Init
 init();
 
-// Functions
+function  init()  {
+        document.getElementById("studentName").innerText  =  studentName;
 
-function init() {
-    // Set content based on variables
-    document.getElementById("studentName").innerText = studentName;
-    // Add navigation link to the navigation panel on the left of the page
-    main.addContenItem("Inleiding", intro);
-    main.addContenItem("Variabelen", variables);
-    main.addContenItem("object",objects);
-    main.addContenItem("array",array);
-    //activate the right insert of values
-    myValue();
-    // Activate the first navigation link
-    intro();
+        main.addContenItem("Inleiding",  intro);
+        main.addContenItem("Variabelen",  variables);
+        main.addContenItem("object",  objects);
+        main.addContenItem("array",  array);
+
+        myValue();
+        intro();
 }
 
-function intro() {
-    let description = "Je bent in dienst van energiemaatschappij Energy Solutions en"
-        + " krijgt de opdracht om een webpagina te maken die de energiestanden toont van een aantal adressen."
-        + " De data wordt via een webAPI beschikbaar gesteld. "
-        + " Dit gebeurt in kleine stapjes en uiteindelijk is het de bedoeling om de data op een nette manier te presenteren."
-        + "<p>Succes!!!</p>";
-    main.updateContent("Inleiding", description);
-
-    // Set link to the element in the DOM
-    var element = document.getElementById("contentPlaceholder");
-
-    // Create the image and set some properties
-    var img = document.createElement("img");
-    img.src = "photo.jpg";
-    img.style.width = "100px";
-
-    // Create the label
-    var label = document.createElement("label");
-    label.innerHTML = studentName;
-
-    // Create the paragraph and add the image and label to it
-    var p = document.createElement("p");
-    p.appendChild(img);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(label);
-
-    // Add the paragraph to the DOM
-    element.appendChild(p);
+function  intro()  {
+        var  omschrijving  =  "Je  bent  in  dienst  van  energiemaatschappij  Energy  Solutions  en"  +  "  krijgt  de  opdracht  om  een  webpagina  te  maken  die  de  energiestanden  toont  van  een  aantal  adressen."  +  "  De  data  wordt  via  een  webAPI  beschikbaar  gesteld.  "  +  "  Dit  gebeurt  in  kleine  stapjes  en  uiteindelijk  is  het  de  bedoeling  om  de  data  op  een  nette  manier  te  presenteren."  +  "<p>Succes!!!</p>";
+        main.updateContent("Inleiding",  omschrijving);
+        var  element  =  document.getElementById("contentPlaceholder");
+        var  img  =  document.createElement("img");
+        img.src  =  "photo.jpg";
+        img.style.width  =  "100px";
+        var  label  =  document.createElement("label");
+        label.innerHTML  =  studentName;
+        var  p  =  document.createElement("p");
+        p.appendChild(img);
+        p.appendChild(document.createElement("br"));
+        p.appendChild(label);
+        element.appendChild(p);
 }
 
-function myValue() {
-    //change the group in the page
-    for(let i = 0; i < studentClass.length; i++ ){
-        studentClass[i].innerText = studentGroup;
-    }
-
-    //change my name
-    for(let i = 0; i < studentNameClass.length; i++ ){
-        studentNameClass[i].innerText = studentName;
-    }
-
-    //change the year
-    for(let i = 0; i < pageYear.length; i++ ){
-        pageYear[i].innerText = year;
-    }
-
+function  myValue()  {
+        for  (var  i  =  0;  i  <  studentClass.length;  i++)  {studentClass[i].innerText  =  studentGroup;}
+        for  (var  i  =  0;  i  <  studentNameClass.length;  i++)  {studentNameClass[i].innerText  =  studentName;}
+        for  (var  i  =  0;  i  <  pageYear.length;  i++)  {pageYear[i].innerText  =  year;}
 }
 
-function variables() {
-    let   postcode="1234ab";
-    let    huisnummer= "99";
-    let    datum= "2018-01-01";
-    let    gas=300;
-    let    water=30;
-    let    electriciteit =[1001, 1002];
-    let    slimmeMeter= true;
-
-    let tittel = "<strong>verslag van de meting</strong> <br>"
-    let text = "voor postcode" + postcode + "en huisnummer" + huisnummer +"zijn op " + datum +" metingen gedaan."+
-        "en dit zijn de resultaten: gas= "+gas +", water= "+ water +", electriciteitHoog= "+ electriciteit[0]+" en electiciteit laag= "+ electriciteit[1];
-    if (slimmeMeter){
-        text +=    " dit is gedaan met een slimme meter";
-    }else {
-        text +=    " dit is niet gedaan met een slimme meter";
-    }
-
-    let tekens = text.length;
-    let words = text.split(" ");
-    let aantalWoorden = words.length;
-
-    let text2 = "<br><br><strong> nog wat eigenschappen  </strong> <br>" +
-        "het verslag geeft "+ tekens + ' tekens, ' + aantalWoorden + "woorden, het eerste woord is "+ words[0] +" en het laaste woord is " + words[aantalWoorden -1 ];
-
-    let text3 ="<br><br><strong>-> bonus<- draar je verslag van de metingen om en dan krijg je </strong> <br>";
-
-    text3 += reverse(text);
-
-    let description =  tittel + text +text2 + text3;
-
-    main.updateContent("vaeiabelen", description)
-
-}
-function reverse(s){
-    return s.split("").reverse().join("");
+function  variables()  {
+        var  postcode  =  "1234ab";
+        var  huisnummer  =  "99";
+        var  datum  =  "2018-01-01";
+        var  gas  =  300;
+        var  water  =  30;
+        var  electriciteit  =  [1001,  1002];
+        var  slimmeM  =  true;
+        var  titel  =  "<p>verslag  van  de  meting</p>  "
+        var  tekst  =  "voor  postcode"  +  postcode  +  "en  huisnummer"  +  huisnummer  +  "zijn  op  "  +  datum  +  "  metingen  gedaan."  +  "en  dit  zijn  de  resultaten:  gas=  "  +  gas  +  ",  water=  "  +  water  +  ",  electriciteitHoog=  "  +  electriciteit[0]  +  "  en  electiciteit  laag=  "  +  electriciteit[1];
+        
+        if  (slimmeM)  {tekst  +=  "  dit  is  wel  met  een  slimme  meter";}  
+        else  {tekst  +=  "  dit  is  niet  met  een  slimme  meter";}
+        
+        var  karakters  =  tekst.length;
+        var  words  =  tekst.split("  ");
+        var  woorden  =  words.length;
+        var  tekst2  =  "<p>  nog  wat  eigenschappen  </p>  "  +  "het  verslag  geeft  "  +  karakters  +  '  karakters,  '  +  woorden  +  "woorden,  het  eerste  woord  is  "  +  words[0]  +  "  en  het  laaste  woord  is  "  +  words[woorden  -  1];
+        var  omschrijving  =  titel  +  tekst  +  tekst2;
+        main.updateContent("variabelen",  omschrijving)
 }
 
-function objects() {
-    let   postcode="1234ab";
-    let    huisnummer= "99";
-    let d = new Date(2018, 1, 1, 1, 0, 0, 0);
-    let    datum= d ;
-    let    gas=300;
-    let    water=30;
-    let    electriciteit =[1001, 1002];
-    let    slimmeMeter= true;
 
-    let title = "<strong> verslag van de meting</strong><br>";
-    let text = "voor postcode " + postcode + " en huisnummer "+ huisnummer+" zijn op metingen gedaan op " + datum+" en dit zij de resultaten: <br>";
-    text +=
-        "<table> " +
-        "<tr>" +
-        "<th>gas:</th> <th>"+ gas+ "</th>" +
-        "</tr>" +
-        "<tr>" +
-        "<th>water:</th><th>"+ water+ "</th>" +
-        "</tr>" +
-        "<tr>" +
-        "<th>Electriciteit Hoog:</th><th>"+ electriciteit[0]+ "</th>" +
-        "</tr>" +
-        "<tr>" +
-        "<th>Electriciteit laag:</th><th>"+ electriciteit[1]+ "</th>" +
-        "</tr>" +
-        " </table>";
-    if (slimmeMeter){
-        text +=    " dit is gedaan met een slimme meter";
-    }else {
-        text +=    " dit is niet gedaan met een slimme meter";
-    }
 
-    let description = title + text
-
-    main.updateContent("Object", description)
+function  objects()  {
+        var  postcode  =  "1234ab";
+        var  huisnummer  =  "99";
+        var  date  =  new  Date(2018,  1,  1,  1,  0,  0,  0);
+        var  datum  =  date;
+        var  gas  =  300;
+        var  water  =  30;
+        var  electriciteit  =  [1001,  1002];
+        var  slimmeM  =  true;
+        var  titel  =  "<p>  verslag  van  de  meting</p>";
+        var  tekst  =  "voor  postcode  "  +  postcode  +  "  en  huisnumer  "  +  huisnummer  +  "  zijn  op  metingen  gedaan  op  "  +  datum  +  "  en  dit  zij  de  resultaten:  ";
+        tekst  +=  "<table>  "  +  "<tr>"  +  "<th>gas:</th>  <th>"  +  gas  +  "</th>"  +  "</tr>"  +  "<tr>"  +  "<th>water:</th><th>"  +  water  +  "</th>"  +  "</tr>"  +  "<tr>"  +  "<th>Electriciteit  Hoog:</th><th>"  +  electriciteit[0]  +  "</th>"  +  "</tr>"  +  "<tr>"  +  "<th>Electriciteit  laag:</th><th>"  +  electriciteit[1]  +  "</th>"  +  "</tr>"  +  "  </table>";
+      
+        if  (slimmeM)  {tekst  +=  "  dit  is  gedaan  met  een  slimme  meter";}
+        else  {tekst  +=  "  dit  is  niet  gedaan  met  een  slimme  meter";}
+        
+        var  omschrijving  =  titel  +  tekst;
+        main.updateContent("Object",  omschrijving)
 }
 
-function array() {
-    let description;
-    let meting1 = {
-        poscode: "1234AB",
-        huisnummer:99,
-        datum:"2018-01-01",
-        gas: 300,
-        water: 30,
-        elecktriceteit: [1001, 1002],
-        slimmeMeter:true
-    };
-    let meting2 = {
-        poscode: "1234AB",
-        huisnummer:45,
-        datum:"2018-01-01",
-        gas: 130,
-        water: 130,
-        elecktriceteit: [11001, 11002],
-        slimmeMeter:false
-    };
-    let metingen = [];
-    metingen.push(meting1);
-    metingen.push(meting2);
-    // console.log(metingen); // controle of het werkt
-    description = "<strong> overzicht van de metingen voor poscode 1234AB </strong><br><br>";
+function  array()  {
+        var  omschrijving;
+        var  meting  =   {huisnummer:  99, postcode:  "1234AB", datum:  "2018-01-01", gas:  300, water:  30, elektriciteit:  [1001,  1002], slimmeM:  true};
+        var  metting1  =  {huisnummer:  45, postcode:  "1234AB", datum:  "2018-01-01", gas:  130, water:  130, elektriciteit:  [11001,  11002], slimmeM:  false};
+        
+        var  metingen  =  [];
+        metingen.push(meting);
+        metingen.push(metting1);
 
-    description+= "<table>" +
-        "<tr id='firstRow'>" +
-        "<th>postcode:</th> <th>huisnummer</th> <th>datum</th> <th>gas</th><th>water</th><th>electriciteit</th><th>slimmemeter</th>" +
-        "</tr>";
+        omschrijving  =  "<p>  overzicht  van  de  metingen  voor  postcode  1234AB  </p>";
+        omschrijving  +=  "<table>"  +  "<tr  id='firstRow'>"  +  "<th>postcode:</th>  <th>huisnummer</th>  <th>datum</th>  <th>gas</th><th>water</th><th>electriciteit</th><th>slimmeM</th>"  +  "</tr>";
 
-    for (let i = 0; i < metingen.length; i++){
-        description += "<tr> <th> " + metingen[i].poscode+ "</th>" ;
-        description += "<th>"+ metingen[i].huisnummer+"</th>";
-        description += "<th>"+ metingen[i].datum+"</th>";
-        description += "<th>"+ metingen[i].gas+"</th>";
-        description += "<th>"+ metingen[i].water+"</th>";
-        description += "<th>"+ metingen[i].elecktriceteit[0] +","+ metingen[i].elecktriceteit[1]+"</th>";
-        description += "<th>"+ metingen[i].slimmeMeter+"</th>";
-        description += "</tr>";
-    }
-    description += " </table>";
-
-
-
-    main.updateContent("array",description)
+        for  (var  i  =  0;  i  <  metingen.length;  i++)  {
+                omschrijving  +=  "<tr>  <th>  "  +  metingen[i].postcode  +  "</th>";
+                omschrijving  +=  "<th>"  +  metingen[i].huisnummer  +  "</th>";
+                omschrijving  +=  "<th>"  +  metingen[i].datum  +  "</th>";
+                omschrijving  +=  "<th>"  +  metingen[i].gas  +  "</th>";
+                omschrijving  +=  "<th>"  +  metingen[i].water  +  "</th>";
+                omschrijving  +=  "<th>"  +  metingen[i].elektriciteit[0]  +  ","  +  metingen[i].elektriciteit[1]  +  "</th>";
+                omschrijving  +=  "<th>"  +  metingen[i].slimmeM  + "</th>";
+                omschrijving  +=  "</tr>";
+        }
+        omschrijving  +=  "  </table>";
+        main.updateContent("array",  omschrijving)
 
 }
