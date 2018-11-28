@@ -52,6 +52,21 @@ nav{
  }
 
 
+/* Nave move*/
+
+.move{
+   display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+.nav__move{
+    font-size: 2em;
+    color: #333;
+}
+.nav__move:hover{
+    color: #fff;
+}
 
 /* Design van de pagina's */
 

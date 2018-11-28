@@ -39,9 +39,5 @@ const verwijderActief = () => {
 
 
 
-
-
-
-
 // bij de start eerste item
 activeren(index);
