@@ -35,7 +35,46 @@ const verwijderActief = () => {
 })
 }
 
+leftbtn = document.getElementById('left')
+rightbtn = document.getElementById('right')
 
+function left(){
+    if (index == 0){
+        leftbtn.style.color = 'grey';
+        leftbtn.style.cursor = 'not-allowed';
+
+        rightbtn.style.color = '#333';
+        rightbtn.style.cursor = 'pointer';
+
+    } else {
+        index--;
+        activeren(num = index);
+        leftbtn.style.color = '#333';
+        leftbtn.style.cursor = 'pointer';
+
+        rightbtn.style.color = '#333';
+        rightbtn.style.cursor = 'pointer';
+
+    }
+}
+function right(){
+    if (index == 4){
+        rightbtn.style.color = 'grey';
+        rightbtn.style.cursor = 'not-allowed';
+
+        leftbtn.style.color = '#333';
+        leftbtn.style.cursor = 'pointer';
+
+    } else {
+        index++;
+        activeren(num = index);
+        rightbtn.style.color = '#333';
+        rightbtn.style.cursor = 'pointer';
+
+        leftbtn.style.color = '#333';
+        leftbtn.style.cursor = 'pointer';
+    }
+}
 
 
 

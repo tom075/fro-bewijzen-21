@@ -63,9 +63,17 @@ nav{
 .nav__move{
     font-size: 2em;
     color: #333;
+    padding: 0;
+    cursor: pointer;
+
 }
 .nav__move:hover{
     color: #fff;
+}
+
+#left{
+    cursor: not-allowed;
+    color: gray;
 }
 
 /* Design van de pagina's */
