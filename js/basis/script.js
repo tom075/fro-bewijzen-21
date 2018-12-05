@@ -123,7 +123,8 @@ function ajax() {
         let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                omschrijving += " overzicht van de metingen voor poscode 1234AB <br><br>";
+
+                omschrijving = "overzicht van de metingen voor poscode 1234AB <br><br>";
                 let verbruik = JSON.parse(this.responseText);
                 console.log(verbruik);
                 omschrijving += "<table>" +
