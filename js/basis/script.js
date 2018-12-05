@@ -16,7 +16,7 @@ function  init()  {
         main.addContenItem("Variabelen",  variables);
         main.addContenItem("object",  objects);
         main.addContenItem("array",  array);
-        main.addContenItem("ajax",  ajax);
+        main.addContenItem("AJAX - tabel",  ajax);
 
 
     myValue();
