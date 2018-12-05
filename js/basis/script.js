@@ -16,8 +16,10 @@ function  init()  {
         main.addContenItem("Variabelen",  variables);
         main.addContenItem("object",  objects);
         main.addContenItem("array",  array);
+        main.addContenItem("ajax",  ajax);
 
-        myValue();
+
+    myValue();
         intro();
 }
 
@@ -51,12 +53,12 @@ function  variables()  {
         var  water  =  30;
         var  electriciteit  =  [1001,  1002];
         var  slimmeM  =  true;
-        var  titel  =  "<p>verslag  van  de  meting</p>  "
+        var  titel  =  "<p>verslag  van  de  meting</p>  ";
         var  tekst  =  "voor  postcode"  +  postcode  +  "en  huisnummer"  +  huisnummer  +  "zijn  op  "  +  datum  +  "  metingen  gedaan."  +  "en  dit  zijn  de  resultaten:  gas=  "  +  gas  +  ",  water=  "  +  water  +  ",  electriciteitHoog=  "  +  electriciteit[0]  +  "  en  electiciteit  laag=  "  +  electriciteit[1];
-        
-        if  (slimmeM)  {tekst  +=  "  dit  is  wel  met  een  slimme  meter";}  
+
+        if  (slimmeM)  {tekst  +=  "  dit  is  wel  met  een  slimme  meter";}
         else  {tekst  +=  "  dit  is  niet  met  een  slimme  meter";}
-        
+
         var  karakters  =  tekst.length;
         var  words  =  tekst.split("  ");
         var  woorden  =  words.length;
@@ -79,10 +81,10 @@ function  objects()  {
         var  titel  =  "<p>  verslag  van  de  meting</p>";
         var  tekst  =  "voor  postcode  "  +  postcode  +  "  en  huisnumer  "  +  huisnummer  +  "  zijn  op  metingen  gedaan  op  "  +  datum  +  "  en  dit  zij  de  resultaten:  ";
         tekst  +=  "<table>  "  +  "<tr>"  +  "<th>gas:</th>  <th>"  +  gas  +  "</th>"  +  "</tr>"  +  "<tr>"  +  "<th>water:</th><th>"  +  water  +  "</th>"  +  "</tr>"  +  "<tr>"  +  "<th>Electriciteit  Hoog:</th><th>"  +  electriciteit[0]  +  "</th>"  +  "</tr>"  +  "<tr>"  +  "<th>Electriciteit  laag:</th><th>"  +  electriciteit[1]  +  "</th>"  +  "</tr>"  +  "  </table>";
-      
+
         if  (slimmeM)  {tekst  +=  "  dit  is  gedaan  met  een  slimme  meter";}
         else  {tekst  +=  "  dit  is  niet  gedaan  met  een  slimme  meter";}
-        
+
         var  omschrijving  =  titel  +  tekst;
         main.updateContent("Object",  omschrijving)
 }
@@ -91,7 +93,7 @@ function  array()  {
         var  omschrijving;
         var  meting  =   {huisnummer:  99, postcode:  "1234AB", datum:  "2018-01-01", gas:  300, water:  30, elektriciteit:  [1001,  1002], slimmeM:  true};
         var  metting1  =  {huisnummer:  45, postcode:  "1234AB", datum:  "2018-01-01", gas:  130, water:  130, elektriciteit:  [11001,  11002], slimmeM:  false};
-        
+
         var  metingen  =  [];
         metingen.push(meting);
         metingen.push(metting1);
@@ -112,4 +114,71 @@ function  array()  {
         omschrijving  +=  "  </table>";
         main.updateContent("array",  omschrijving)
 
+}
+
+function ajax() {
+        let url = "http://gert-rikkers.nl/api/meterstanden";
+        let omschrijving;
+        let gasVerbruikt;
+        let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                omschrijving += " overzicht van de metingen voor poscode 1234AB <br><br>";
+                let verbruik = JSON.parse(this.responseText);
+                console.log(verbruik);
+                omschrijving += "<table>" +
+                    "<tr id='firstRow'>" +
+                    "<th>postcode:</th>" +
+                    "<th>huisnummer</th>" +
+                    " <th>datum</th>" +
+                    " <th>gas</th>" +
+                    "<th>water</th>" +
+                    "<th>slimmemeter</th>" +
+                    "<th>electriciteit hoog</th>" +
+                    "<th>electriciteit laag</th>" +
+                    "<th>maand</th>" +
+                    "<th>gas verbruik</th> " +
+                    "</tr>";
+
+                for (let i = 0; i < verbruik.length; i++) {
+                    omschrijving += "<tr><th>" + verbruik[i].postcode + "</th>";
+                    omschrijving += "<th>" + verbruik[i].huisnummer + "</th>";
+                    omschrijving += "<th>" + verbruik[i].datum + "</th>";
+                    omschrijving += "<th>" + verbruik[i].gas + "</th>";
+                    omschrijving += "<th>" + verbruik[i].water + "</th>";
+                    omschrijving += "<th>" + slimmemeter(verbruik[i].slimmeMeter) + "</th>";
+                    omschrijving += "<th>" + verbruik[i].elektriciteit[0] + "</th>";
+                    omschrijving += "<th>" + verbruik[i].elektriciteit[1] + "</th>";
+                    omschrijving += "<th>" + maand(i) + "</th>";
+                    omschrijving += i !== 0 ? "<th>" + verbruikGas(gasVerbruikt, verbruik[i].gas) + "</th>" : "<th>" + verbruik[i].gas + "</th>";
+                    gasVerbruikt = verbruik[i].gas;
+                    omschrijving += "</tr>";
+                }
+
+                omschrijving += " </table>";
+                main.updateContent("Ajax-tabel", omschrijving);
+            }
+             };
+
+
+    xhttp.open("GET", url, true);
+    xhttp.send();
+
+}
+
+function slimmemeter(meter) {
+    return meter ? "+" : "";
+}
+
+function verbruikGas(a, b) {
+    return b - a;
+}
+
+function maand(a) {
+    a = a % 12;
+    let maand = [];
+
+    maand[0] = "jan"; maand[1] = "feb"; maand[2] = "mrt"; maand[3] = "apr"; maand[4] = "mei"; maand[5] = "jun"; maand[6] = "jul"; maand[7] = "aug"; maand[8] = "sep"; maand[9] = "okt"; maand[10] = "nov"; maand[11] = "dec";
+
+    return maand[a];
 }
