@@ -170,10 +170,10 @@ function ajax() {
 function slimmemeter(meter) {
     return meter ? "+" : "";
 }
-
 function verbruikGas(a, b) {
     return b - a;
 }
+
 
 function maand(a) {
     a = a % 12;
